@@ -79,8 +79,8 @@ class SpiderGuokewendaDownloaderMiddleware:
         # - or return a Request object
         # - or raise IgnoreRequest: process_exception() methods of
         #   installed downloader middleware will be called
-        f = Faker(locale='zh_CN')
-        request.headers['User-Agent'] = f.chrome()
+        # f = Faker(locale='zh_CN')
+        # request.headers['User-Agent'] = f.chrome()
         return None
 
     def process_response(self, request, response, spider):

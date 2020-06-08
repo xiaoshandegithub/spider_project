@@ -66,7 +66,7 @@ SPIDER_MIDDLEWARES = {
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    'spider_guokewenda.pipelines.SpiderGuokewendaPipeline': 300,
-   'scrapy_redis.pipelines.RedisPipeline': 400,  # redis存储数据方法的类
+   'scrapy_redis.pipelines.RedisPipeline': 400  # redis存储数据方法的类
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -92,4 +92,5 @@ ITEM_PIPELINES = {
 DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"   # 实现了去重类
 SCHEDULER = "scrapy_redis.scheduler.Scheduler"    # 调度器
 SCHEDULER_PERSIST = True      # 表示关闭时是否删除换存数据，或者说是是否持久化数据
+
 REDIS_URL = "redis://127.0.0.1:6379"        # 连接 redis
