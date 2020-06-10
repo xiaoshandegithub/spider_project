@@ -27,15 +27,15 @@ class SuanfaSpiderSpider(RedisSpider):
             yield scrapy.Request(url, callback=self.parse, cookies=cookies_dict, headers=headers)
 
     def parse(self, response):
-        self.parse_comtent(response)
         print('*' * 100)
+        self.parse_comtent(response)
         base_url = "https://www.cxyxiaowu.com/suanfa-2/suanfa/page/"
         for i in range(2, 100):
             url = base_url + str(i)
             yield Request(url, callback=self.parse_comtent)
 
     def parse_comtent(self, response):
-        # print('*' * 100)
+        print('*' * 100)
         item = SuanfatujieItem()
         div_lines = response.xpath('//*[@class="row posts-wrapper"]/div')
         for line in div_lines:
